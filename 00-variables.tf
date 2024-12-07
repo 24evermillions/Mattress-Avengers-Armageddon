@@ -245,3 +245,8 @@ variable avail_zone_tokyotest-private1a {}
 
 variable instance_type {}  
 
+///////////////////////////////////////////////////////////
+
+#
+
+variable public_key_location {}

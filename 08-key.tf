@@ -16,7 +16,7 @@ data "aws_ami" "tokyo-ami" {
 resource "aws_key_pair" "tokyo-key-pair" {
   provider   = aws.tokyo
   key_name   = "tokyo-key-pair"
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ data "aws_ami" "newyork-ami" {
 resource "aws_key_pair" "newyork-key-pair" {
   provider   = aws.new-york
   key_name   = "newyork-key-pair"
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 
@@ -59,7 +59,7 @@ data "aws_ami" "london-ami" {
 resource "aws_key_pair" "london-key-pair" {
   provider   = aws.london
   key_name   = "london-key-pair"
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -80,7 +80,7 @@ data "aws_ami" "saopaulo-ami" {
 resource "aws_key_pair" "saopaulo-key-pair" {
   provider   = aws.sao-paulo
   key_name   = "saopaulo-key-pair"
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -108,7 +108,7 @@ resource "aws_key_pair" "australia-key-pair" {
 
 //file reference the location of the public key
 
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -130,7 +130,7 @@ data "aws_ami" "hongkong-ami" {
 resource "aws_key_pair" "hongkong-key-pair" {
   provider   = aws.hong-kong
   key_name   = "hongkong-key-pair"
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,8 +153,10 @@ resource "aws_key_pair" "california-key-pair" {
   provider = aws.california
   key_name = "california-key-pair"
   # file reference the location of the public key
-  public_key = file("~/.ssh/aws.pem.pub")
+  public_key = file(var.public_key_location)
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
